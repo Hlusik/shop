@@ -1,4 +1,4 @@
-import { Category } from "../first/category.enum";
+import { Category } from '../first/category.enum';
 
 export class Product {
     constructor(

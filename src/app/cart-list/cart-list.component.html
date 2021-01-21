@@ -1,5 +1,6 @@
 <div *ngIf="cart; else empty_cart">
     <ul>
+      <!-- Откуда products? -->
         <li *ngFor="let product of products">
             <ul>
                 <li>Name: {{product.name}}</li>
