@@ -18,17 +18,16 @@ export class CartItemComponent implements OnInit {
   deleteCart: EventEmitter<Cart> = new EventEmitter<Cart>();
 
   constructor(
-    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
   }
 
-  public onChangeAmount() {
+  onChangeAmount(): void {
     this.changeAmount.emit(this.cart);
   }
 
-  public onDeleteCart(){
+  onDeleteCart(): void {
     this.deleteCart.emit(this.cart);
   }
 }

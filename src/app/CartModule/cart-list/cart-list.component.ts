@@ -32,7 +32,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.cartService.deleteCart(cart);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
