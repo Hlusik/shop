@@ -12,12 +12,12 @@ export class HighlightDirective {
   attrClass = 'headingClass';
 
   @HostListener('mouseenter', ['$event'])
-  enter(event: Event) {
+  enter(event: Event): void {
     this.el.nativeElement.style.display = 'block';
   }
 
   @HostListener('mouseleave', ['$event'])
-  leave(event: Event) {
+  leave(event: Event): void {
     this.el.nativeElement.style.display = 'inline';
   }
 }
