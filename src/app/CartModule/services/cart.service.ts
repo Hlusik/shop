@@ -26,7 +26,7 @@ export class CartService {
   addToCart(product: Product): void{
     let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
-    let ourCart: Cart = carts?.find(item => item.product.id === product.id);
+    const ourCart: Cart = carts?.find(item => item.product.id === product.id);
 
     if (ourCart) {
       ++ carts.find(item => item.product.id === product.id).amount;
@@ -47,9 +47,9 @@ export class CartService {
   }
 
   changeCartAmount(cart: Cart): void {
-    let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
+    const carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
-    let ourCart: Cart = carts?.find(item => item.product.id === cart.product.id);
+    const ourCart: Cart = carts?.find(item => item.product.id === cart.product.id);
 
     if (ourCart) {
       carts.find(item => item.product.id === cart.product.id).amount = cart.amount;
