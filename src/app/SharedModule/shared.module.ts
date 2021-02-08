@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { OrderBy } from './pipes/order-by.pipe';
-
+import { HighlightDirective } from './directives/highlight/highlight.directive';
 
 @NgModule({
   declarations: [
-    OrderBy
+    OrderBy,
+    HighlightDirective
   ],
   imports: [
     CommonModule
@@ -15,7 +16,8 @@ import { OrderBy } from './pipes/order-by.pipe';
   exports: [
     OrderBy,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HighlightDirective
   ]
 })
 export class SharedModule { }

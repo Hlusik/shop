@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Category } from 'src/app/SharedModule/category.enum';
+import { Category } from 'src/app/SharedModule/enums/category.enum';
 import { Product } from '../models/product.model';
 
 const products = [

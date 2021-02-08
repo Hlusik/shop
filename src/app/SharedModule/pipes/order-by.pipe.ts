@@ -7,8 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderBy implements PipeTransform {
 
   transform(value: any[], order: boolean = true, propName: string = ''): any[] {
-    console.log(order);
-    console.log(propName);
 
     if (propName) {
       if(order) {

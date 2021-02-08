@@ -42,7 +42,7 @@ export class CartService {
   }
 
   // Service message commands
-  publishCArtData(data: Cart[]) {
+  publishCArtData(data: Cart[]): void {
     this.channel.next(data);
   }
 
@@ -57,7 +57,7 @@ export class CartService {
     localStorage.setItem('productCarts', JSON.stringify(carts));
   }
 
-  deleteCart(cart: Cart) {
+  deleteCart(cart: Cart): void {
     let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
 

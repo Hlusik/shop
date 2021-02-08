@@ -46,7 +46,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.sortOrder = e.target.checked;
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 

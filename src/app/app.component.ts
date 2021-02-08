@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent implements AfterViewInit {
   @ViewChild('appTitle') title: ElementRef<HTMLInputElement>;
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.title.nativeElement.textContent = 'Food shop!';
   }
 }

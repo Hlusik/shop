@@ -1,4 +1,4 @@
-import { Category } from 'src/app/SharedModule/category.enum';
+import { Category } from 'src/app/SharedModule/enums/category.enum';
 
 export class Product {
     constructor(
