@@ -8,13 +8,18 @@ import { Cart } from '../models/cart.model';
   providedIn: 'root'
 })
 export class CartService {
+  private cartProducts: Product[];
+  private totalQuantity: number;
+  private totalSum: number;
+
   // Observable cart[] sources
   private channel = new Subject<Cart[]>();
 
   // Observable cart[] streams
   public channel$ = this.channel.asObservable();
 
-  getCarts(): Cart[]{
+  // getProducts === getCartProducts()
+  getCartProducts(): Cart[] {
     let carts: Cart[] = [];
 
     if (localStorage.getItem('productCarts')) {
@@ -23,7 +28,7 @@ export class CartService {
     return carts;
   }
 
-  addToCart(product: Product): void{
+  addProduct(product: Product): void{
     let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
     const ourCart: Cart = carts?.find(item => item.product.id === product.id);
@@ -46,6 +51,7 @@ export class CartService {
     this.channel.next(data);
   }
 
+  //increaseQuantity()/decreaseQuantity() + changeQuantity() === changeCartAmount
   changeCartAmount(cart: Cart): void {
     const carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
@@ -57,7 +63,7 @@ export class CartService {
     localStorage.setItem('productCarts', JSON.stringify(carts));
   }
 
-  deleteCart(cart: Cart): void {
+  removeProduct(cart: Cart): void {
     let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
 
@@ -65,4 +71,22 @@ export class CartService {
     localStorage.setItem('productCarts', JSON.stringify(carts));
     this.publishCArtData(carts);
   }
+
+  removeAllProducts(): void {
+    localStorage.removeItem('productCarts');
+
+    this.publishCArtData([]);
+  }
+
+  updateCartData(): void {
+
+  }
+
+  isEmptyCart(): boolean {
+    let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
+      JSON.parse(localStorage.getItem('productCarts')) : [];
+
+    return (carts.length === 0);
+  }
+
 }

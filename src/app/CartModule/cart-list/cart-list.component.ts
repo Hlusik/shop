@@ -31,7 +31,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.sub = this.cartService.channel$.subscribe(
       data => this.carts = data
     );
-    this.carts = this.cartService.getCarts();
+    this.carts = this.cartService.getCartProducts();
   }
 
   public onChangeAmount(cart: Cart): void{
@@ -39,7 +39,7 @@ export class CartListComponent implements OnInit, OnDestroy {
   }
 
   public onDeleteCart(cart: Cart): void{
-    this.cartService.deleteCart(cart);
+    this.cartService.removeProduct(cart);
   }
 
   onChange(e: any): void{
