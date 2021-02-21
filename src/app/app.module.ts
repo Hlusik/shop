@@ -7,6 +7,8 @@ import { ProductModule } from './ProductsModule/product.module';
 import { CartModule } from './CartModule/cart.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ProcessOrderModule } from './OrdersModule/process-order.module';
+import { AdminModule } from './AdminModule/admin.module';
+import { LoginModule } from './LoginModule/login.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,8 @@ import { ProcessOrderModule } from './OrdersModule/process-order.module';
     ProductModule,
     CartModule,
     ProcessOrderModule,
+    AdminModule,
+    LoginModule,
     // MUST BE LAST
     AppRoutingModule,
   ],
