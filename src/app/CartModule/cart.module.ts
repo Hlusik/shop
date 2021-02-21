@@ -6,13 +6,16 @@ import { CartItemComponent } from './cart-list/cart-item/cart-item.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 
 import { SharedModule } from '../SharedModule/shared.module';
+import { CartRoutingModule } from './cart-routong.module';
+import { CanLoadGuard } from '../core/guard/can-load.guard';
 
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        CartRoutingModule
     ],
     declarations: [
         CartListComponent,
@@ -20,6 +23,7 @@ import { SharedModule } from '../SharedModule/shared.module';
     ],
     exports: [
         CartListComponent,
-    ]
+    ],
+    providers: [CanLoadGuard]
 })
 export class CartModule {}

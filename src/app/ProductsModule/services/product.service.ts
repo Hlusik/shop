@@ -4,9 +4,11 @@ import { Category } from 'src/app/SharedModule/enums/category.enum';
 import { Product } from '../models/product.model';
 
 const products = [
-  new Product(1, 'Banana', 'yellow and sweet', 10, Category.Left, true),
-  new Product(2, 'Apple', 'red and sweet', 20, Category.Down, true),
-  new Product(3, 'Lime', 'green and sour', 15, Category.Right, false),
+  new Product(1, 'Corn', 'yellow and sweet', 10, Category.Left, true, './../../../assets/img/corn.jpg'),
+  new Product(2, 'Pumpkin', 'red and sweet', 20, Category.Down, true, './../../../assets/img/pumpkin.jpg'),
+  new Product(3, 'Lime', 'green and sour', 15, Category.Right, false, './../../../assets/img/lime.jpg'),
+  new Product(4, 'Kiwi', 'yellow and sweet', 10, Category.Left, true, './../../../assets/img/kiwi.jpg'),
+  new Product(5, 'Peach', 'red and sweet', 20, Category.Down, true, './../../../assets/img/peach.jpg')
 ];
 
 const productsPromise = Promise.resolve(products);

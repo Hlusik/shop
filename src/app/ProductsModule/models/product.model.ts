@@ -8,5 +8,6 @@ export class Product {
       public price: number = 0,
       public category: Category = Category.Down,
       public isAvailable: boolean = true,
+      public imgUrl: string = '',
     ) {}
   }

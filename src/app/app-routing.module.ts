@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { CartListComponent } from './CartModule/cart-list/cart-list.component';
+
 
 const routes: Routes = [
-    // {
-    //     path: 'login',
-    //     component: LoginComponent
-    // },
+    {
+        path: 'cart',
+        component: CartListComponent
+    },
     {
         path: '',
         redirectTo: '/product-list',

@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 // rxjs
 import { switchMap } from 'rxjs/operators';
+import { CartService } from 'src/app/CartModule/services/cart.service';
 
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
@@ -18,7 +19,8 @@ export class ProductViewComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private productService: ProductService
+        private productService: ProductService,
+        private cartService: CartService
     ) {}
 
     ngOnInit(): void {
@@ -37,6 +39,10 @@ export class ProductViewComponent implements OnInit {
 
     onGoBack(): void {
         this.router.navigate(['/product-list']);
+    }
+
+    public onBuy(): void {
+        this.cartService.addProduct(this.product);
     }
 
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductModule } from './ProductsModule/product.module';
 import { CartModule } from './CartModule/cart.module';
 import { AppRoutingModule } from './app-routing.module';
+import { ProcessOrderModule } from './OrdersModule/process-order.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     ProductModule,
     CartModule,
+    ProcessOrderModule,
     // MUST BE LAST
     AppRoutingModule,
   ],

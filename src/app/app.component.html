@@ -1,10 +1,25 @@
 <h1 #appTitle></h1>
 <hr>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="navbar-brand" routerLink="/product-list">Product list</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/admin">Admin</a>
+            </li>
+            <li  routerLinkActive="active">
+                <a routerLink="/cart">cart</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<hr>
 <router-outlet
         #routerOutlet="outlet">
         <!-- (activate)='onActivate($event, routerOutlet)'
         (deactivate)='onDeactivate($event, routerOutlet)'> -->
 </router-outlet>
 <!-- <app-product-list></app-product-list> -->
-<hr>
-<app-cart-list></app-cart-list>
+<!-- <app-cart-list></app-cart-list> -->

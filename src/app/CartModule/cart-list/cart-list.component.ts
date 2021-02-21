@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Cart } from '../models/cart.model';
@@ -11,6 +12,7 @@ import { CartService } from '../services/cart.service';
 })
 export class CartListComponent implements OnInit, OnDestroy {
   carts: Cart[];
+  isCartEmpty: boolean;
   private sub: Subscription;
   sortOrder: boolean;
   sortOption: object;
@@ -22,10 +24,12 @@ export class CartListComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.isCartEmpty = this.cartService.isEmptyCart();
     this.sortOrder = true;
     this.sortOption = this.options[0];
     this.sub = this.cartService.channel$.subscribe(
@@ -48,6 +52,12 @@ export class CartListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  onProceedToCheckout(e: any): void {
+    const link = ['/order'];
+    this.router.navigate(link);
+
   }
 
 }

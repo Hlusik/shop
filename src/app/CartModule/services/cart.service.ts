@@ -86,7 +86,7 @@ export class CartService {
     let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
 
-    return (carts.length === 0);
+    return (carts.length === 0) ? true : false;
   }
 
 }

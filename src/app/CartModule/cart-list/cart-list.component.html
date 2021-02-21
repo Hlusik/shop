@@ -18,14 +18,15 @@
     />
 </div>
 
-<div *ngIf="carts; else empty_cart" class="container">
+<div *ngIf="!isCartEmpty; else empty_cart" class="container">
     <div class="row">
         <div class="col" *ngFor="let cart of carts | orderBy: sortOrder: sortOption.value">
             <app-cart-item
                 appHighlight
                 [cart]='cart'
                 (changeAmount)="onChangeAmount($event)"
-                (deleteCart)="onDeleteCart($event)"></app-cart-item>
+                (deleteCart)="onDeleteCart($event)">
+            </app-cart-item>
         </div>
     </div>
 </div>
@@ -33,3 +34,9 @@
 <ng-template #empty_cart>
     <p>Cart is empty</p>
 </ng-template>
+
+<button
+    (click)="onProceedToCheckout($event)"
+>
+    Proceed to checkout
+</button>
