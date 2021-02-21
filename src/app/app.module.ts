@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { ProductModule } from './ProductsModule/product.module';
 import { CartModule } from './CartModule/cart.module';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,6 +14,8 @@ import { CartModule } from './CartModule/cart.module';
     BrowserModule,
     ProductModule,
     CartModule,
+    // MUST BE LAST
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

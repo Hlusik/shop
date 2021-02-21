@@ -19,4 +19,11 @@ export class ProductService {
   getProducts(): Promise<Product[]>{
     return productsPromise;
   }
+
+  getProduct(id: number | string): Promise<Product> {
+    return this.getProducts()
+    .then(products => products.find(product => product.id === +id))
+    .catch(() => Promise.reject('Error in product method'));
+  }
+
 }

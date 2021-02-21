@@ -1,5 +1,10 @@
 <h1 #appTitle></h1>
 <hr>
-<app-product-list></app-product-list>
+<router-outlet
+        #routerOutlet="outlet">
+        <!-- (activate)='onActivate($event, routerOutlet)'
+        (deactivate)='onDeactivate($event, routerOutlet)'> -->
+</router-outlet>
+<!-- <app-product-list></app-product-list> -->
 <hr>
 <app-cart-list></app-cart-list>
