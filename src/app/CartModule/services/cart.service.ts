@@ -51,7 +51,7 @@ export class CartService {
     this.channel.next(data);
   }
 
-  //increaseQuantity()/decreaseQuantity() + changeQuantity() === changeCartAmount
+  // increaseQuantity()/decreaseQuantity() + changeQuantity() === changeCartAmount
   changeCartAmount(cart: Cart): void {
     const carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
@@ -83,7 +83,7 @@ export class CartService {
   }
 
   isEmptyCart(): boolean {
-    let carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
+    const carts: Cart[] = (JSON.parse(localStorage.getItem('productCarts'))) ?
       JSON.parse(localStorage.getItem('productCarts')) : [];
 
     return (carts.length === 0) ? true : false;

@@ -24,7 +24,7 @@ const routes: Routes = [
         redirectTo: '/product-list',
         pathMatch: 'full'
     },
-    //{
+    // {
     // The router will match this route if the URL requested
     // doesn't match any paths for routes defined in our configuration
     // path: '**',

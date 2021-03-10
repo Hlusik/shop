@@ -15,7 +15,7 @@ export class CanLoadGuard implements CanLoad {
     route: Route,
     segments: UrlSegment[]
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    let res: boolean = false;
+    let res = false;
 
     if (route.path === 'order') {
       res = !this.cartService.isEmptyCart();

@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
     this.addToCart.emit(this.product);
   }
 
-  onViewProduct() {
+  onViewProduct(): void {
     this.viewProduct.emit(this.product);
   }
 

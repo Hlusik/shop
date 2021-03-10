@@ -1,6 +1,7 @@
 <div>
     <p>Name: {{product.name | uppercase}}</p>
     <p>Description: {{product.description}}</p>
+    <!-- второй параметр в пайпе уже не булевое значение, а строчное "code", "symbol" or "symbol-narrow" -->
     <p>Price: {{product.price | currency: 'EUR': true}}</p>
     <p>Category: {{product.category}}</p>
     <p>Is available: {{product.isAvailable}}</p>

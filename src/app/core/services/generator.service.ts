@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GeneratorService {
 
-  //n из набора a-z, A-Z, 0-9
+  // n из набора a-z, A-Z, 0-9
 
   constructor() { }
 
