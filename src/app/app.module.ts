@@ -17,7 +17,10 @@ import { LoginModule } from './LoginModule/login.module';
     BrowserModule,
     ProductModule,
     CartModule,
-    ProcessOrderModule,
+    // Если модуль загружается как лейзи, то его не надо включать в импорты,
+    // иначе он собирается в main.js, а не в отдельный файл *.js
+    // Гард работает
+    // ProcessOrderModule,
     AdminModule,
     LoginModule,
     // MUST BE LAST

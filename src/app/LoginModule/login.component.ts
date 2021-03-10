@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { AuthService } from '../core/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   message: string;
   private unsubscribe: Subject<void> = new Subject();
@@ -24,12 +24,12 @@ export class LoginComponent implements OnInit {
     this.setMessage();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     console.log('[takeUntil ngOnDestroy]');
     this.unsubscribe.complete();
   }
 
-  onLogin() {
+  onLogin(): void {
     this.message = 'Trying to log in ...';
     const observer = {
       next: () => {
@@ -57,12 +57,12 @@ export class LoginComponent implements OnInit {
     .subscribe(observer);
   }
 
-  onLogout() {
+  onLogout(): void {
     this.authService.logout();
     this.setMessage();
   }
 
-  private setMessage() {
+  private setMessage(): void {
     this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
 
