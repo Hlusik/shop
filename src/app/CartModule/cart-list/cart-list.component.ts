@@ -15,7 +15,7 @@ export class CartListComponent implements OnInit, OnDestroy {
   isCartEmpty: boolean;
   private sub: Subscription;
   sortOrder: boolean;
-  sortOption: object;
+  sortOption: object; // лучше не использовать этот тип, он не дает проверки на свойства объекта
 
   options = [
     {value: 'product.name', name: 'name'},
